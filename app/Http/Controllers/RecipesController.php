@@ -13,4 +13,15 @@ class RecipesController extends Controller
         return view('addRecipe');
     }
 
+    public function store() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo '<pre>';
+            print_r($_POST);
+            echo '</pre>';
+            echo '<pre>';
+            print_r($_FILES['picture']['type']);
+            echo '</pre>';
+        }
+    }
+
 }

@@ -4,10 +4,11 @@
     <h2>Enviar Receita</h2>
 
     <article>
-        <form>
+        <form method="post" action="http://127.0.0.1:8000/recipes/store" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label for="recipeName">Nome da receita</label>
-                <input type="text" class="form-control" id="recipeName" placeholder="Escreva o nome da receita">
+                <input type="text" name="recipeName" class="form-control" id="recipeName" placeholder="Escreva o nome da receita">
             </div>
             <div class="form-group">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
@@ -15,7 +16,8 @@
                     <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
                 </svg>
                 <label for="picture">Foto da receita</label>
-                <input type="file" class="form-control-file" id="picture">
+                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                <input type="file" name="picture" class="form-control-file" id="picture">
             </div>
             <div class="row">
                 <div class="col">
@@ -33,15 +35,15 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="number" class="form-control" placeholder="Minutos" id="time">
+                    <input type="number" name="time" class="form-control" placeholder="Minutos" id="time">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control" placeholder="Porções" id="servings">
+                    <input type="number" class="form-control"  name="servings" placeholder="Porções" id="servings">
                 </div>
             </div>
             <div class="form-group">
                 <label for="category">Categoria</label>
-                <select class="form-control" id="category">
+                <select class="form-control" name="category" id="category">
                     <option>Categoria</option>
                     <option>Peixe</option>
                     <option>Carne</option>
@@ -50,15 +52,15 @@
             </div>
             <div class="form-group">
                 <label for="ingredients">Ingredientes</label>
-                <textarea class="form-control" id="ingredients" rows="4" placeholder="Ex.: 3 ovos"></textarea>
+                <textarea class="form-control" name="ingredients" id="ingredients" rows="4" placeholder="Ex.: 3 ovos"></textarea>
             </div>
             <div class="form-group">
                 <label for="instructions">Modo de preparo</label>
-                <textarea class="form-control" id="instructions" rows="4" placeholder="Ex.: misture todos os ingredientes"></textarea>
+                <textarea class="form-control" id="instructions" name="instructions" rows="4" placeholder="Ex.: misture todos os ingredientes"></textarea>
             </div>
             <div class="form-group">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="toPublish">
+                    <input class="form-check-input" type="checkbox" name="toPublish" id="toPublish">
                     <label class="form-check-label" for="toPublish">
                         Tornar a minha receita pública
                     </label>

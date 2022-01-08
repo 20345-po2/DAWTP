@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RecipesController;
+use App\Http\Controllers\UploadFileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('/recipes/add-recipe', [RecipesController::class, 'create']);
+Route::post('/recipes/store', [RecipesController::class, 'store']);
+
