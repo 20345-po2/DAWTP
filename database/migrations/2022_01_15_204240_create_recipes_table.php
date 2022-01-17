@@ -15,14 +15,14 @@ class CreateRecipesTable extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('categoryID');
+            $table->foreignId('userID');
             $table->string('recipeName');
             $table->integer('servings');
             $table->integer('preparationTime');
             $table->text('instructions');
             $table->boolean('toPublish')->default(false);
             $table->boolean('approvalStatus')->default(false);
-            $table->integer('userID');
-            $table->integer('categoryID');
             $table->timestamps();
         });
     }

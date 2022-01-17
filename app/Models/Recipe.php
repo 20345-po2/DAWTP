@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = ["recipeName", "servings", "preparationTime", "instructions", "toPublish", "approvalStatus", "categoryID"];
+
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
