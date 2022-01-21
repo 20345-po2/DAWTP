@@ -41,4 +41,19 @@ class RecipesController extends Controller
 
     }
 
+    public function displayRecipes()
+    {
+        return view('displayRecipes');
+    }
+
+    public function myAccount()
+    {
+        return view('myAccount');
+    }
+
+    public function about()
+    {
+        return view('aboutUs');
+    }
+
 }

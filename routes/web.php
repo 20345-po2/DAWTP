@@ -21,4 +21,6 @@ Route::get('/', function () {
 
 Route::get('/recipes/add-recipe', [RecipesController::class, 'create']);
 Route::post('/recipes/store', [RecipesController::class, 'store']);
-
+Route::get('/recipes/my-recipes', [RecipesController::class, 'displayRecipes']);
+Route::get('my-account', [RecipesController::class, 'myAccount']);
+Route::get('about-us', [RecipesController::class, 'about']);
