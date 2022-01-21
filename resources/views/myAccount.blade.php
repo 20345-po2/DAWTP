@@ -1,5 +1,5 @@
 @extends('components.layout')
 
 @section('content')
-    A minha conta
+    @extends('components.sidenav')
 @endsection
