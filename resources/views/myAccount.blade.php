@@ -1,5 +1,7 @@
-@extends('components.layout')
+<x-layout>
+    <x-slot name="content">
+        Acc
+    </x-slot>
+</x-layout>
 
-@section('content')
-    @extends('components.sidenav')
-@endsection
+

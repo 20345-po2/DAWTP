@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use App\Models\Recipe;
 
 class RecipesController extends Controller
 {
@@ -43,7 +44,9 @@ class RecipesController extends Controller
 
     public function displayRecipes()
     {
-        return view('displayRecipes');
+        return view('displayRecipes', [
+            'recipes' => Recipe::all()
+        ]);
     }
 
     public function myAccount()

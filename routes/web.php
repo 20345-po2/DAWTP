@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\UploadFileController;
+use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'recipes' => Recipe::all()
+    ]);
+
 });
 
 Route::get('/recipes/add-recipe', [RecipesController::class, 'create']);
