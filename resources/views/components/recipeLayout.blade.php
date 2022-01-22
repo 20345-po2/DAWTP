@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="card-text">Categoria:<br>{{$recipe->category->name}}</p>
+                    <p class="card-text">Categoria:<br><a href="/categories/{{$recipe->category->slug}}">{{$recipe->category->name}}</a></p>
                 </div>
                 <div class="col">
                     <p class="card-text">Preparo<br>{{$recipe->preparationTime}} Minutos</p>

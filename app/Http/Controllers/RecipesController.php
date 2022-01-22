@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\File;
 use App\Models\Recipe;
 
 class RecipesController extends Controller
 {
-    private $recipeData;
+    private $recipe;
 
     public function index()
     {
@@ -16,7 +17,9 @@ class RecipesController extends Controller
 
     public function create()
     {
-        return view('addRecipe');
+        return view('addRecipe', [
+            'categories' => Category::all()
+        ]);
     }
 
     public function store()
@@ -27,16 +30,22 @@ class RecipesController extends Controller
             print_r($this->recipeData);
             echo '</pre>';
         }*/
-        $this->recipeData = $_POST;
+
+
+        $this->recipe = new Recipe();
+        $this->recipe->name = $_POST['name'];
+        $this->recipe->slug = strtolower(str_replace(' ', '-', $_POST['name']) . '-1');
+        $this->recipe->preparationTime = $_POST['time'];
+        $this->recipe->servings = $_POST['servings'];
+        $this->recipe->category_id = $_POST['category'];
+        $this->recipe->instructions = $_POST['instructions'];
+        $this->recipe->toPublish = isset($_POST['toPublish']);
+        $this->recipe->user_id = 1;
+        $this->recipe->save();
 
         return view('viewRecipe',
-            ['title' => $this->recipeData['recipeName'],
-                //'recipeImage' => $this->recipeData['picture'],
-                'time' => $this->recipeData['time'],
-                'servings' => $this->recipeData['servings'],
-                'category' => $this->recipeData['category'],
-                'ingredients' => $this->recipeData['ingredients'],
-                'instructions' => $this->recipeData['instructions']
+            [
+                'recipe' => $this->recipe
             ]);
 
 
@@ -46,6 +55,13 @@ class RecipesController extends Controller
     {
         return view('displayRecipes', [
             'recipes' => Recipe::all()
+        ]);
+    }
+
+    public function categories(Category $category)
+    {
+        return view('home', [
+            'recipes' => $category->recipes
         ]);
     }
 

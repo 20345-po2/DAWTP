@@ -25,8 +25,15 @@ Route::get('/', function () {
 
 
 Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'viewRecipe']);
-Route::get('/recipes/add-recipe', [RecipesController::class, 'create']);
-Route::post('/recipes/store', [RecipesController::class, 'store']);
-Route::get('/recipes/my-recipes', [RecipesController::class, 'displayRecipes']);
+
+Route::get('categories/{category:slug}', [RecipesController::class, 'categories']);
+
+Route::get('/add-recipe', [RecipesController::class, 'create']);
+
+Route::post('/store', [RecipesController::class, 'store']);
+
+Route::get('/my-recipes', [RecipesController::class, 'displayRecipes']);
+
 Route::get('my-account', [RecipesController::class, 'myAccount']);
+
 Route::get('about-us', [RecipesController::class, 'about']);

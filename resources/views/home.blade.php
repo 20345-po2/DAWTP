@@ -4,7 +4,7 @@
 
         @if($recipes->count())
             <x-mainRecipeCard :recipe="$recipes[0]"/>
-            @if($recipes->count())
+            @if($recipes->count() > 6)
                 <div class="container">
                     <div class="row">
                         <div class="col">

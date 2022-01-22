@@ -1,32 +1,17 @@
-@extends('components.layout')
+<x-layout>
+    <x-slot name="content">
+        <x-recipeLayout :recipe="$recipe"/>
 
-@section('content')
-    <h2>{{$title}}</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <p>Tempo de preparo: {{$time}} minutos.</p> <br>
-                <p>Rendimento: {{$servings}} porções.</p>
-            </div>
-            Categoria: {{$category}}
-        </div>
-    </div>
-    <div>
-        <h3>Ingredientes</h3>
-        <p>{{$ingredients}}</p>
-
-        <h3>Instruções de preparo</h3>
-        <p>{{$instructions}}</p>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-               <button>Editar</button>
-            </div>
-            <div class="col-6">
-                <button>Ir para a página inicial</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a class="btn btn-primary rounded" href="#">Editar Receita</a>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-primary rounded" href="/">Ir para a página inicial</a>
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    </x-slot>
+</x-layout>
+

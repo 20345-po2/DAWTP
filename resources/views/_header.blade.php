@@ -12,10 +12,10 @@
                     <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/recipes/my-recipes">As Minhas Receitas</a>
+                    <a class="nav-link" href="/my-recipes">As Minhas Receitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/recipes/add-recipe">Enviar Receita</a>
+                    <a class="nav-link" href="/add-recipe">Enviar Receita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/my-account">

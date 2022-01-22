@@ -133,5 +133,35 @@ class DatabaseSeeder extends Seeder
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
 
+        Recipe::create([
+            'user_id' => $user->id,
+            'category_id' => $lanches->id,
+            'name' => 'Salada Caesar',
+            'slug' => 'salada-caesar-' . $user->id,
+            'servings' => 3,
+            'preparationTime' => 30,
+            'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
+        ]);
+
+        Recipe::create([
+            'user_id' => $user->id,
+            'category_id' => $lanches->id,
+            'name' => 'Bolinho de chuva',
+            'slug' => 'bolinho-de-chuva-' . $user->id,
+            'servings' => 3,
+            'preparationTime' => 30,
+            'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
+        ]);
+
+        Recipe::create([
+            'user_id' => $user->id,
+            'category_id' => $lanches->id,
+            'name' => 'Bolo-panqueca de banana com café',
+            'slug' => 'bolo-panqueca-de-banana-com-café-' . $user->id,
+            'servings' => 3,
+            'preparationTime' => 30,
+            'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
+        ]);
+
     }
 }
