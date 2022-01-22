@@ -12,7 +12,9 @@ class RecipesController extends Controller
 
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'recipes' => Recipe::latest()->filter(request(['search']))->get()
+        ]);
     }
 
     public function create()
@@ -80,6 +82,12 @@ class RecipesController extends Controller
     public function about()
     {
         return view('aboutUs');
+    }
+
+
+    public function getRecipes()
+    {
+        return null;
     }
 
 }

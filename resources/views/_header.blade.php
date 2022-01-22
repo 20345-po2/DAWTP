@@ -30,9 +30,9 @@
                     <a class="nav-link" href="/about-us">Sobre nós</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise por receitas aqui"
-                       aria-label="Pesquisar">
+            <form class="form-inline my-2 my-lg-0" method="GET" action="#">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise receitas"
+                       aria-label="Pesquisar" name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-search" viewBox="0 0 16 16">
