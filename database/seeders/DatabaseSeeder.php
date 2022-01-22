@@ -98,6 +98,7 @@ class DatabaseSeeder extends Seeder
 
         Recipe::create([
             'user_id' => $user->id,
+            'slug' => '',
             'category_id' => $light->id,
             'name' => 'Frigideira de arroz com salsicha',
             'servings' => 3,

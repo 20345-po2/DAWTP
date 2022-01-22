@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 </p>
-                <a href="/recipes/recipe" class="btn btn-primary">Ver Receita</a>
+                <a href="/recipes/{{$recipe->slug}}" class="btn btn-primary">Ver Receita</a>
             </div>
         </div>
     </div>

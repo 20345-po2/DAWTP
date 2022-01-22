@@ -1,5 +1,5 @@
 @props(['recipe'])
-<div class="card mb-3" style=";  margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
+<div class="card mb-3" style="margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
     <h1 class="card-title">{{ $recipe->name }}</h1>
     <img src="/images/pizza.jpg" alt="..." class="img-fluid rounded-start" alt="{{$recipe->name}}">
     <div class="card-body">
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+<div class="card text-dark bg-light mb-3" style=" margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
     <div class="card-header text-center">Ingredientes</div>
     <div class="card-body">
         {{--        <h5 class="card-title">Light card title</h5>--}}
@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+<div class="card text-dark bg-light mb-3" style=" margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
     <div class="card-header text-center">Modo de preparo</div>
     <div class="card-body">
         {{--        <h5 class="card-title">Light card title</h5>--}}

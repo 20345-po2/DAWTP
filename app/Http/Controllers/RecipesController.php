@@ -49,9 +49,11 @@ class RecipesController extends Controller
         ]);
     }
 
-    public function viewRecipe()
+    public function viewRecipe(Recipe $recipe)
     {
-        return view('recipe');
+        return view('recipe', [
+            'recipe' => $recipe
+        ]);
     }
 
     public function myAccount()
