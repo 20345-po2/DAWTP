@@ -49,6 +49,11 @@ class RecipesController extends Controller
         ]);
     }
 
+    public function viewRecipe()
+    {
+        return view('recipe');
+    }
+
     public function myAccount()
     {
         return view('myAccount');
