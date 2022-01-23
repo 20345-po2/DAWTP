@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         $user = User::factory()->create();
 
+
         Category::create([
             'name' => 'Bolos e Tortas Doces',
             'slug' => 'bolos-tortas-doces'

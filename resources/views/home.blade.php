@@ -36,11 +36,6 @@
             @else
                 <p>Nenhuma receita foi encontrada</p>
             @endif
-
-
-            {{--        <x-recipeCard :recipe="$recipes[2]"/>--}}
-            {{--        <x-recipeCard :recipe="$recipes[1]"/>--}}
-            {{--        <x-recipeCard :recipe="$recipes[2]"/>--}}
     </x-slot>
 </x-layout>
 
