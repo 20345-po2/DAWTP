@@ -15,7 +15,7 @@
                     <a class="nav-link" href="/my-recipes">As Minhas Receitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/add-recipe">Enviar Receita</a>
+                    <a class="nav-link" href="/user/recipes/create">Enviar Receita</a>
                 </li>
                 @auth
                     <li class="nav-item">

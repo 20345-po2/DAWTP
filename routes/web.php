@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RecipesController::class, 'index'])->name('home');
-Route::get('/add-recipe', [RecipesController::class, 'create']);
+Route::get('/user/recipes/create', [RecipesController::class, 'create'])->middleware('user');
 Route::post('/store', [RecipesController::class, 'store']);
 Route::get('/my-recipes', [RecipesController::class, 'list']);
 Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'show']);

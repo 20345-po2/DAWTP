@@ -71,6 +71,9 @@
                             Criar conta
                         </button>
                     </div>
+                    <di>
+                        <p>Já tem uma conta? <a href="/login">Entrar</a></p>
+                    </di>
                 </form>
             </main>
 
