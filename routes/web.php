@@ -31,8 +31,8 @@ Route::get('/my-recipes', [RecipesController::class, 'displayRecipes']);
 
 
 
-Route::get('/register', [RegisterController::class, 'create']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
 //Route::get('my-account', [RecipesController::class, 'myAccount']);
 //

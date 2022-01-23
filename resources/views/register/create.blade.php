@@ -2,7 +2,7 @@
     <x-slot name="content">
         <section class="px-4 py-5">
             <main class="mw-50 mx-auto bg-light p-5 rounded-lg border-primary">
-                <h1 class="text-bold text-xl-center ">Cadastrar!</h1>
+                <h1 class="text-bold text-xl-center ">Criar conta</h1>
                 <form method="POST" action="/register">
                     @csrf
                     <div class="mb-3">
@@ -68,7 +68,7 @@
                     <div class="mb-3">
                         <button type="submit"
                                 class="bg-primary text-white rounded py-2 px-4 hover:bg-primary">
-                            Cadastrar
+                            Criar conta
                         </button>
                     </div>
                 </form>
