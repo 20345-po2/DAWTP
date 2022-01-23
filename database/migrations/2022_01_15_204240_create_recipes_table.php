@@ -19,6 +19,7 @@ class CreateRecipesTable extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
+            $table->string('thumbnail')->nullable();
             $table->integer('servings');
             $table->integer('preparationTime');
             $table->text('instructions');
