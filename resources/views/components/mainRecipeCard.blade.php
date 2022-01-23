@@ -2,7 +2,7 @@
 <div id="mainCard" class="card mb-3 " style=";  margin-left: 13.5%; margin-right: 13.5%">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="/images/pizza.jpg" alt="{{$recipe->name}}" class="img-fluid rounded-start">
+            <img src="{{asset('storage/' . str_replace("public/", "", $recipe->picture))}}" alt="{{$recipe->name}}" class="img-fluid rounded-start">
         </div>
         <div class="col-md-8">
             <div class="card-body">

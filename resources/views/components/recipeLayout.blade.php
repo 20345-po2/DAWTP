@@ -1,12 +1,14 @@
 @props(['recipe'])
 <div class="card mb-3" style="margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
     <h1 class="card-title">{{ $recipe->name }}</h1>
-    <img src="/images/pizza.jpg" alt="..." class="img-fluid rounded-start" alt="{{$recipe->name}}">
+    <img src="{{asset('storage/' . str_replace("public/", "", $recipe->picture))}}" alt="..." class="img-fluid rounded-start"
+         alt="{{$recipe->name}}">
     <div class="card-body">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="card-text">Categoria:<br><a href="/categories/{{$recipe->category->slug}}">{{$recipe->category->name}}</a></p>
+                    <p class="card-text">Categoria:<br><a
+                            href="/categories/{{$recipe->category->slug}}">{{$recipe->category->name}}</a></p>
                 </div>
                 <div class="col">
                     <p class="card-text">Preparo<br>{{$recipe->preparationTime}} Minutos</p>

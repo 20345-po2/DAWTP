@@ -40,7 +40,7 @@ class RecipesController extends Controller
         $attributes['name'] = request()->get('name');
         $attributes['user_id'] = auth()->id();
         $attributes['publish'] = isset($_POST['publish']);
-        $attributes['picture'] = request()->file('picture')->store('thumbnails');
+        $attributes['picture'] = request()->file('picture')->store('public/thumbnails');
 
 
         $recipe = Recipe::create($attributes);
