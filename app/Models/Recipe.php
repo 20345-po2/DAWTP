@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Recipe extends Model
 {
     use HasFactory;
 
 
-    protected $fillable = ["recipeName", "servings", "preparationTime", "instructions", "toPublish", "approvalStatus", "categoryID"];
+    protected $fillable = ['slug', 'picture', "name", "servings", "time", "instructions", "publish", "approval", "category_id", 'user_id'];
 
     public function getRouteKeyName()
     {
@@ -35,6 +36,12 @@ class Recipe extends Model
                 ->orWhere('instructions', 'like', '%' . request('search') . '%');
         }
 
+    }
+
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = $name;
+        $this->attributes['slug'] = Str::slug($name . '-' . auth()->id());
     }
 
 

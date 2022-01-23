@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Pizza de frigideira com atum',
             'slug' => 'pizza-de-frigideira-com-atum-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
 
         ]);
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Frigideira de legumes ao creme',
             'slug' => 'frigideira-de-legumes-ao-creme-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
 
 
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Frigideira de arroz com salsicha',
             'slug' => 'frigideira-de-arroz-com-salsicha-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
 
 
@@ -130,7 +130,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Torta de frango na frigideira',
             'slug' => 'torta-de-frango-na-frigideira-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
 
@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Salada Caesar',
             'slug' => 'salada-caesar-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
 
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Bolinho de chuva',
             'slug' => 'bolinho-de-chuva-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
 
@@ -160,7 +160,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Bolo-panqueca de banana com café',
             'slug' => 'bolo-panqueca-de-banana-com-café-' . $user->id,
             'servings' => 3,
-            'preparationTime' => 30,
+            'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
 

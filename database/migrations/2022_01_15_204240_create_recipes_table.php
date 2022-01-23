@@ -19,12 +19,12 @@ class CreateRecipesTable extends Migration
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->string('thumbnail')->nullable();
+            $table->string('picture')->nullable();
             $table->integer('servings');
-            $table->integer('preparationTime');
+            $table->integer('time');
             $table->text('instructions');
-            $table->boolean('toPublish')->default(false);
-            $table->boolean('approvalStatus')->default(false);
+            $table->boolean('publish')->default(false);
+            $table->boolean('approval')->default(false);
             $table->timestamps();
         });
     }

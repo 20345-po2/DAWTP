@@ -9,7 +9,6 @@ use Illuminate\Validation\Rule;
 
 class RecipesController extends Controller
 {
-    private $recipe;
 
     public function index()
     {
@@ -28,34 +27,28 @@ class RecipesController extends Controller
     public function store()
     {
 
-        request()->file('picture')->store('thumbnails');
-        return 'done';
-//
-//        request()->validate([
-//            'name' => 'required',
-//            'time' => 'required',
-//            'servings' => 'required',
-//            'instructions' => 'required',
-//            'ingredients' => 'required',
-//            'category' => ['required', Rule::exists('categories', 'id')]
-//        ]);
-//
-//
-//        $this->recipe = new Recipe();
-//        $this->recipe->name = $_POST['name'];
-//        $this->recipe->slug = strtolower(str_replace(' ', '-', $_POST['name']) . '-1');
-//        $this->recipe->preparationTime = $_POST['time'];
-//        $this->recipe->servings = $_POST['servings'];
-//        $this->recipe->category_id = $_POST['category'];
-//        $this->recipe->instructions = $_POST['instructions'];
-//        $this->recipe->toPublish = isset($_POST['toPublish']);
-//        $this->recipe->user_id = 1;
-//        $this->recipe->save();
-//
-//        return view('recipes.edit',
-//            [
-//                'recipe' => $this->recipe
-//            ]);
+        $attributes = request()->validate([
+            'name' => 'required',
+            'time' => 'required',
+            'picture' => 'required|image',
+            'servings' => 'required',
+            'instructions' => 'required',
+            'ingredients' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+        $attributes['name'] = request()->get('name');
+        $attributes['user_id'] = auth()->id();
+        $attributes['publish'] = isset($_POST['publish']);
+        $attributes['picture'] = request()->file('picture')->store('thumbnails');
+
+
+        $recipe = Recipe::create($attributes);
+
+        return view('recipes.edit',
+            [
+                'recipe' => $recipe
+            ]);
 
 
     }

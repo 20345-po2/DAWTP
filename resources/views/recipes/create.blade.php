@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="category">Categoria</label>
-                                <select class="form-control" name="category" id="category">
+                                <select class="form-control" name="category_id" id="category_id">
                                     <option value="0">-- Escolha uma categoria --</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -73,8 +73,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="toPublish" id="toPublish">
-                                    <label class="form-check-label" for="toPublish">
+                                    <input class="form-check-input" type="checkbox" name="publish" id="publish">
+                                    <label class="form-check-label" for="publish">
                                         Tornar a minha receita pública
                                     </label>
                                 </div>
