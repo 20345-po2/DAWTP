@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        User::truncate();
-        Category::truncate();
-        Recipe::truncate();
+        //User::truncate();
+        //Category::truncate();
+        //Recipe::truncate();
 
         $user = User::factory()->create();
 
@@ -116,7 +116,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id,
             'category_id' => $light->id,
             'name' => 'Frigideira de arroz com salsicha',
-            'slug' => 'frigideira-de-arroz-com-salsicha-'. $user->id,
+            'slug' => 'frigideira-de-arroz-com-salsicha-' . $user->id,
             'servings' => 3,
             'preparationTime' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',

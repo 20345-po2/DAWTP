@@ -16,8 +16,8 @@ class CreateRecipesTable extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique();
-            $table->foreignId('category_id');
-            $table->foreignId('user_id');
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->integer('servings');
             $table->integer('preparationTime');

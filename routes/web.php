@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UploadFileController;
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +31,13 @@ Route::post('/store', [RecipesController::class, 'store']);
 Route::get('/my-recipes', [RecipesController::class, 'displayRecipes']);
 
 
-
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+
+
+Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('/login', [SessionsController::class, 'store'])->middleware('auth');
+Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 //Route::get('my-account', [RecipesController::class, 'myAccount']);
 //
