@@ -19,16 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RecipesController::class, 'index'])->name('home');
+Route::get('/add-recipe', [RecipesController::class, 'create']);
+Route::post('/store', [RecipesController::class, 'store']);
+Route::get('/my-recipes', [RecipesController::class, 'list']);
+Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'show']);
 
-Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'viewRecipe']);
 
 Route::get('categories/{category:slug}', [RecipesController::class, 'categories']);
 
-Route::get('/add-recipe', [RecipesController::class, 'create']);
 
-Route::post('/store', [RecipesController::class, 'store']);
 
-Route::get('/my-recipes', [RecipesController::class, 'displayRecipes']);
 
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
@@ -36,7 +36,7 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
-Route::post('/login', [SessionsController::class, 'store'])->middleware('auth');
+Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 //Route::get('my-account', [RecipesController::class, 'myAccount']);

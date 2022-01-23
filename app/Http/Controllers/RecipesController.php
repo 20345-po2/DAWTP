@@ -19,7 +19,7 @@ class RecipesController extends Controller
 
     public function create()
     {
-        return view('addRecipe', [
+        return view('recipes.create', [
             'categories' => Category::all()
         ]);
     }
@@ -45,7 +45,7 @@ class RecipesController extends Controller
         $this->recipe->user_id = 1;
         $this->recipe->save();
 
-        return view('viewRecipe',
+        return view('recipes.edit',
             [
                 'recipe' => $this->recipe
             ]);
@@ -53,9 +53,9 @@ class RecipesController extends Controller
 
     }
 
-    public function displayRecipes()
+    public function list()
     {
-        return view('displayRecipes', [
+        return view('recipes.list', [
             'recipes' => Recipe::all()
         ]);
     }
@@ -67,27 +67,18 @@ class RecipesController extends Controller
         ]);
     }
 
-    public function viewRecipe(Recipe $recipe)
+    public function show(Recipe $recipe)
     {
-        return view('recipe', [
+        return view('recipes.show', [
             'recipe' => $recipe
         ]);
     }
 
-    public function myAccount()
-    {
-        return view('myAccount');
-    }
 
     public function about()
     {
         return view('aboutUs');
     }
 
-
-    public function getRecipes()
-    {
-        return null;
-    }
 
 }

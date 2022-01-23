@@ -21,11 +21,14 @@
                     <li class="nav-item">
                         <span class="nav-link text-sm-center font-weight-bold text-uppercase mt-3">
                             Olá, {{auth()->user()->name}}!</span>
-                        <form method="POST" action="/logout" class="nav-link">
+                    </li>
+                    <li class="nav-link">
+                        <form method="POST" action="/logout">
                             @csrf
                             <button class="btn-outline-primary rounded">Sair</button>
                         </form>
                     </li>
+
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="/register">Criar conta</a>
@@ -38,7 +41,7 @@
                     <a class="nav-link" href="/about-us">Sobre nós</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="GET" action="#">
+            <form class="form-inline my-2 my-lg-0" method="GET" action="/">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquise receitas"
                        aria-label="Pesquisar" name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">

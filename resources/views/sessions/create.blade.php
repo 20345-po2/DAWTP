@@ -5,7 +5,6 @@
                 <h1 class="text-bold text-xl-center ">Log in</h1>
                 <form method="POST" action="/login">
                     @csrf
-
                     <div class="mb-3">
                         <label class="block mb-2 text-uppercase font-weight-bold text-small" for="email">
                             E-mail

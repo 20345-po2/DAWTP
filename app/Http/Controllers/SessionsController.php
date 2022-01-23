@@ -17,18 +17,17 @@ class SessionsController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'email' => 'required|exists:users,email',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if (!auth()->attempt($attributes)) {
+        if (! auth()->attempt($attributes)) {
             throw ValidationException::withMessages([
                 'email' => 'As credenciais fornecidas não são válidas.'
             ]);
         }
 
         session()->regenerate();
-
         return redirect('/')->with('success', 'Bem-vindo de volta!');
 
     }
