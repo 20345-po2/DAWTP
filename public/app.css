@@ -21,3 +21,32 @@
     display: block;
     color: black;
 }
+
+
+
+@media screen and (max-width: 768px) { /*case of tablet*/
+    header,footer{
+        background-color:blue;
+    }
+    table{
+        /*width: 60%;*/
+        background-color:red;
+        /*font-size:65%;*/
+        font-size:0.6em;
+    }
+}
+
+@media screen and (max-width: 480px) { /*case of mobilePhone*/
+    body {font-size:0.6em;}
+    header,footer{
+        background-color:blue;
+    }
+    table{
+        /*width: 30%;*/
+        background-color:blue;
+        /*font-size:60%;*/
+        font-size:0.6em;
+
+    }
+}
+
