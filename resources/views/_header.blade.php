@@ -1,4 +1,5 @@
 <header>
+    <script src="/app.js"></script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">My Recipe World</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -18,20 +19,28 @@
                     <a class="nav-link" href="/user/recipes/create">Enviar Receita</a>
                 </li>
                 @auth
-                    <li class="nav-item">
-                        <span class="nav-link text-sm-center font-weight-bold text-uppercase mt-3">
-                            Olá, {{auth()->user()->name}}!</span>
-                    </li>
-                    <li class="nav-link">
-                        <form method="POST" action="/logout">
+                    <li class="nav-item dropdown right-menu text-sm-center font-weight-bold text-uppercase">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                           role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="true">
+                            Olá, {{auth()->user()->name}}!
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Minha conta</a>
+                            <a class="dropdown-item" href="#">Enviar receita</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="logout()">Sair</a>
+                        </div>
+
+                        <form method="POST" action="/logout" class="hidden" id="logout-form">
                             @csrf
-                            <button class="btn-outline-primary rounded">Sair</button>
                         </form>
                     </li>
-
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="/register">Criar conta</a>
+                        <a class="nav-link" href="/register" >Criar conta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Iniciar sessão</a>
