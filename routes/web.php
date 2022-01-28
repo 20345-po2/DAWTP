@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -20,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RecipesController::class, 'index'])->name('home');
 Route::get('/user/recipes/create', [RecipesController::class, 'create'])->middleware('user');
-Route::post('/store', [RecipesController::class, 'store']);
-Route::get('/my-recipes', [RecipesController::class, 'list']);
+Route::post('/store', [RecipesController::class, 'store'])->middleware('user');
+Route::get('/user/recipes/{recipe}/edit', [RecipesController::class, 'edit'])->middleware('user');
+Route::get('/my-recipes', [RecipesController::class, 'list'])->middleware('user');
 Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'show']);
 
 
@@ -36,6 +38,11 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
+
+
+Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('user');
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 

@@ -1,7 +1,6 @@
 <x-layout>
     <x-slot name="content">
         @auth
-            @include('_sideBar')
 
             <div class="card text-dark bg-light mb-3" style=" margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
                 <div class="card-body">
@@ -12,7 +11,7 @@
                             <div class="form-group">
                                 <label for="name">Nome da receita</label>
                                 <input type="text" name="name" class="form-control" id="name" required
-                                       placeholder="Escreva o nome da receita" value="{{old('name')}}">
+                                       placeholder="Escreva o nome da receita" value="{{old('name')}}" >
                             </div>
                             <div class="form-group">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -22,7 +21,7 @@
                                         d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
                                 </svg>
                                 <label for="picture">Foto da receita</label>
-                                <input type="hidden" name="MAX_FILE_SIZE" value="{{old('picture')}}"/>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="{{old('picture')}}" />
                                 <input type="file" name="picture" class="form-control-file" id="picture">
                             </div>
                             <div class="row">
@@ -70,8 +69,7 @@
                             <div class="form-group">
                                 <label for="instructions">Modo de preparo</label>
                                 <textarea class="form-control" id="instructions" name="instructions" rows="4"
-                                          placeholder="Ex.: misture todos os ingredientes"
-                                          value="{{old('instructions')}}"></textarea>
+                                          placeholder="Ex.: misture todos os ingredientes" value="{{old('instructions')}}"></textarea>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
@@ -88,8 +86,7 @@
             </div>
         @else
             <p>
-                Deve <a href="/register"> Criar uma conta </a> ou <a href="/login">Entrar</a> para enviar as suas
-                receitas.
+                Deve <a href="/register"> Criar uma conta </a> ou <a href="/login">Entrar</a> para enviar as suas receitas.
             </p>
         @endauth
     </x-slot>

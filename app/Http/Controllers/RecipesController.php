@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\File;
 use App\Models\Recipe;
+use App\Models\User;
 use Illuminate\Validation\Rule;
 
 class RecipesController extends Controller
@@ -55,8 +56,13 @@ class RecipesController extends Controller
 
     public function list()
     {
+        $user = User::find(auth()->user()->id);
+        $recipes = $user->recipes;
+        //$recipes = $user->recipes->where('approval', false);
+
+
         return view('recipes.list', [
-            'recipes' => Recipe::all()
+            'recipes' => $recipes->all()
         ]);
     }
 
@@ -72,6 +78,11 @@ class RecipesController extends Controller
         return view('recipes.show', [
             'recipe' => $recipe
         ]);
+    }
+
+    public function edit(Recipe $recipe)
+    {
+        return view('recipes.edit', ['recipe' => $recipe]);
     }
 
 
