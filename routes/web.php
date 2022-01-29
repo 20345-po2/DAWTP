@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\RecipesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Http\Controllers\UploadFileController;
 use App\Models\Recipe;
 use Illuminate\Support\Facades\Route;
 
