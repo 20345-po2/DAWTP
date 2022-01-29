@@ -22,7 +22,7 @@
                         <x-form.label title="Categoria" name="category_id"/>
                         <select class="form-control" name="category_id" id="category_id">
                             <option value="0">-- Escolha uma categoria --</option>
-                            @foreach($categories as $category)
+                            @foreach(\App\Models\Category::all() as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>

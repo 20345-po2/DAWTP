@@ -20,9 +20,7 @@ class RecipesController extends Controller
 
     public function create()
     {
-        return view('recipes.create', [
-            'categories' => Category::all()
-        ]);
+        return view('recipes.create');
     }
 
     public function store()
@@ -82,7 +80,8 @@ class RecipesController extends Controller
 
     public function edit(Recipe $recipe)
     {
-        return view('recipes.edit', ['recipe' => $recipe]);
+        return view('recipes.edit', [
+            'recipe' => $recipe]);
     }
 
 
