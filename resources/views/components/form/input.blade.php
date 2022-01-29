@@ -6,7 +6,6 @@
            name="{{$name}}"
            id="{{$name}}"
            placeholder="{{$placeholder}}"
-           required
         {{$attributes(['value' => old($name)])}}
     >
     <x-form.error name="{{$name}}"/>

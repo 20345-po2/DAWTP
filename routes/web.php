@@ -23,6 +23,7 @@ Route::get('/', [RecipesController::class, 'index'])->name('home');
 Route::get('/user/recipes/create', [RecipesController::class, 'create'])->middleware('user');
 Route::post('/store', [RecipesController::class, 'store'])->middleware('user');
 Route::get('/user/recipes/{recipe}/edit', [RecipesController::class, 'edit'])->middleware('user');
+Route::patch('/user/recipes/{recipe}', [RecipesController::class, 'update'])->middleware('user');
 Route::get('/my-recipes', [RecipesController::class, 'list'])->middleware('user');
 Route::get('/recipes/{recipe:slug}', [RecipesController::class, 'show']);
 

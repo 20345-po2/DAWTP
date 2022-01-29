@@ -84,6 +84,30 @@ class RecipesController extends Controller
             'recipe' => $recipe]);
     }
 
+    public function update(Recipe $recipe)
+    {
+        $attributes = request()->validate([
+            'name' => 'required',
+            'time' => 'required',
+            'picture' => 'image',
+            'servings' => 'required',
+            'instructions' => 'required',
+            'ingredients' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+        $attributes['publish'] = isset($_POST['publish']);
+
+        if (isset($attributes['thumbnail'])) {
+            $attributes['picture'] = request()->file('picture')->store('public/thumbnails');
+        }
+
+
+        $recipe->update($attributes);
+
+        return back()->with('success', "Receita atualizada!");
+    }
+
 
     public function about()
     {

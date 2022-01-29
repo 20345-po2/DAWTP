@@ -2,8 +2,9 @@
     <x-slot name="content">
         @auth
             <x-setting :heading="'Editar receita: ' . $recipe->name ">
-                <form method="post" action="http://127.0.0.1:8000/store" enctype="multipart/form-data">
+                <form method="POST" action="/user/recipes/{{$recipe->id}}" enctype="multipart/form-data">
                     @csrf
+                    @method('PATCH')
                     <x-form.input name="name" title="Nome da receita"
                                   placeholder="Escreva o nome da receita" :value="old('name', $recipe->name)"/>
                     <div class="row">
