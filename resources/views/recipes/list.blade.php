@@ -35,13 +35,13 @@
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <a href="/user/recipes/{{$recipe->id}}/edit"
-                                           class="btn btn-outline-primary"  role="button">Edit</a>
+                                           class="btn btn-outline-primary" role="button">Edit</a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <form method="POST" action="/user/recipes/{{$recipe->id}}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-outline-danger">Apagar</button>
+                                            <button class="btn btn-outline-danger" onclick="return confirm('Quer mesmo apagar esta receita?')">Apagar</button>
                                         </form>
                                     </td>
                                 </tr>
