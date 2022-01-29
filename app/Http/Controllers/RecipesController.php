@@ -108,6 +108,12 @@ class RecipesController extends Controller
         return back()->with('success', "Receita atualizada!");
     }
 
+    public function destroy(Recipe $recipe) {
+        $recipe->delete();
+
+        return back()->with('success', 'Receita apagada!');
+    }
+
 
     public function about()
     {

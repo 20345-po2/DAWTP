@@ -19,7 +19,8 @@
                                             </div>
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a class="text-sm font-medium text-gray-900" href="/recipes/{{$recipe->slug}}">
+                                                    <a class="text-sm font-medium text-gray-900"
+                                                       href="/recipes/{{$recipe->slug}}">
                                                         {{$recipe->name}}
                                                     </a>
                                                 </div>
@@ -27,12 +28,21 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{$recipe->approval == false ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}}">
+                <span
+                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{$recipe->approval == false ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}}">
                   {{$recipe->approval == false ? 'Aguarda aprovação' : 'Aprovada'}}
                 </span>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="/user/recipes/{{$recipe->id}}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                        <a href="/user/recipes/{{$recipe->id}}/edit"
+                                           class="btn btn-outline-primary"  role="button">Edit</a>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <form method="POST" action="/user/recipes/{{$recipe->id}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-outline-danger">Apagar</button>
+                                        </form>
                                     </td>
                                 </tr>
 
