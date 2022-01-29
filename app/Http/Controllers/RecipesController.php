@@ -26,15 +26,7 @@ class RecipesController extends Controller
     public function store()
     {
 
-        $attributes = request()->validate([
-            'name' => 'required',
-            'time' => 'required',
-            'picture' => 'required|image',
-            'servings' => 'required',
-            'instructions' => 'required',
-            'ingredients' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
+       $attributes = $this->validateRecipe();
 
         $attributes['name'] = request()->get('name');
         $attributes['user_id'] = auth()->id();
@@ -86,19 +78,12 @@ class RecipesController extends Controller
 
     public function update(Recipe $recipe)
     {
-        $attributes = request()->validate([
-            'name' => 'required',
-            'time' => 'required',
-            'picture' => 'image',
-            'servings' => 'required',
-            'instructions' => 'required',
-            'ingredients' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
-        ]);
+
+        $attributes = $this->validateRecipe($recipe);
 
         $attributes['publish'] = isset($_POST['publish']);
 
-        if (isset($attributes['thumbnail'])) {
+        if ($attributes['thumbnail'] ?? false) {
             $attributes['picture'] = request()->file('picture')->store('public/thumbnails');
         }
 
@@ -108,10 +93,26 @@ class RecipesController extends Controller
         return back()->with('success', "Receita atualizada!");
     }
 
-    public function destroy(Recipe $recipe) {
+    public function destroy(Recipe $recipe)
+    {
         $recipe->delete();
 
         return back()->with('success', 'Receita apagada!');
+    }
+
+    protected function validateRecipe(?Recipe $recipe = null): array
+    {
+        $recipe ??= new Recipe();
+
+        return request()->validate([
+            'name' => 'required',
+            'time' => 'required',
+            'picture' => $recipe->exists ? ['image'] : ['required', 'image'],
+            'servings' => 'required',
+            'instructions' => 'required',
+            'ingredients' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
     }
 
 
