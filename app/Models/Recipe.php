@@ -11,7 +11,10 @@ class Recipe extends Model
     use HasFactory;
 
 
-    protected $fillable = ['slug', 'picture', "name", "servings", "time", "instructions", "publish", "approval", "category_id", 'user_id'];
+    protected $fillable = [
+        'slug', 'picture', "name", "servings",
+        "time", "instructions", "publish", "approval",
+        "category_id", 'user_id'];
 
     public function getRouteKeyName()
     {

@@ -6,6 +6,12 @@
     max-width: 75%;
 }
 
+#navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+}
 
 .dropdown-menu {
     display: none;

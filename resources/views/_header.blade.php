@@ -1,6 +1,6 @@
 <header>
     <script type="text/javascript" src="/app.js"></script>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-center" id="navBar">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">My Recipe World</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

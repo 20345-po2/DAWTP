@@ -41,7 +41,6 @@ class RecipesController extends Controller
                 'recipe' => $recipe
             ]);
 
-
     }
 
     public function list()
