@@ -2,8 +2,9 @@
     <x-slot name="content">
         <!-- This example requires Tailwind CSS v2.0+ -->
 
-        <div class="flex flex-col">
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="flex flex-col mt-2"  style="margin-left: 23.5%; margin-right: 13.5%; max-width: 50%;">
+            <h1 class="title">Receitas enviadas</h1>
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 mt-2" >
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">

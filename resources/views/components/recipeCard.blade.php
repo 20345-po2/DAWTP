@@ -1,5 +1,5 @@
 @props(['recipe'])
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3" style="max-width: 540px;  margin-left: 13.5%; margin-right: 13.5%">
     <div class="row g-0">
         <div class="col-md-4">
             <img src="{{asset('storage/' . str_replace("public/", "", $recipe->picture))}}" alt="{{$recipe->name}}" class="img-fluid rounded-start">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="col">
                         <p class="card-text">
-                            <small class="text-muted">Tempo: {{$recipe->preparationTime}} minutos </small>
+                            <small class="text-muted">Tempo: {{$recipe->time}} minutos </small>
                     </div>
                 </div>
                 </p>

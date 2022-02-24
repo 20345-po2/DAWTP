@@ -7,6 +7,7 @@ use App\Models\File;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use Illuminate\View\View;
 
 class RecipesController extends Controller
 {
@@ -26,12 +27,24 @@ class RecipesController extends Controller
     public function store()
     {
 
-       $attributes = $this->validateRecipe();
+
+        $attributes = $this->validateRecipe();
 
         $attributes['name'] = request()->get('name');
         $attributes['user_id'] = auth()->id();
         $attributes['publish'] = isset($_POST['publish']);
         $attributes['picture'] = request()->file('picture')->store('public/thumbnails');
+
+        $ing = explode("\n", $_POST['ingredients']);
+        foreach ($ing as $item) {
+            echo "Receita 1";
+            echo "<pre>";
+            print_r(explode(" ", $item));
+            echo "</pre>";
+        }
+
+
+
 
 
         $recipe = Recipe::create($attributes);

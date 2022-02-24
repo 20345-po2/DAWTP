@@ -47,6 +47,9 @@ Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('u
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+
+Route::get('about-us', [RecipesController::class, 'about']);
+
 //Route::get('my-account', [RecipesController::class, 'myAccount']);
 //
 //Route::get('about-us', [RecipesController::class, 'about']);

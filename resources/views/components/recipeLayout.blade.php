@@ -11,7 +11,7 @@
                             href="/categories/{{$recipe->category->slug}}">{{$recipe->category->name}}</a></p>
                 </div>
                 <div class="col">
-                    <p class="card-text">Preparo<br>{{$recipe->preparationTime}} Minutos</p>
+                    <p class="card-text">Preparo<br>{{$recipe->time}} Minutos</p>
                 </div>
                 <div class="col">
                     <p class="card-text">Rendimento<br>{{$recipe->servings}} Porções</p>

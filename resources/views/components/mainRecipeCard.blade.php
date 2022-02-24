@@ -27,7 +27,7 @@
                     </div>
                     <div class="col">
                         <p class="card-text">
-                            <small class="text-muted">Tempo: {{$recipe->preparationTime}} minutos </small>
+                            <small class="text-muted">Tempo: {{$recipe->time}} minutos </small>
                     </div>
                 </div>
                 </p>

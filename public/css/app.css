@@ -6,12 +6,7 @@
     max-width: 75%;
 }
 
-#navBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: red;
-}
+
 
 .dropdown-menu {
     display: none;
@@ -30,6 +25,9 @@
 .dropdown-menu a {
     display: block;
     color: black;
+}
+.myBG {
+    background-color: yellow;
 }
 
 
