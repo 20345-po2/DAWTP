@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\File;
+use App\Models\Ingredients;
 use App\Models\Recipe;
+use App\Models\RecipeIngredient;
 use App\Models\User;
 use Illuminate\Validation\Rule;
-use Illuminate\View\View;
 
 class RecipesController extends Controller
 {
@@ -35,19 +36,13 @@ class RecipesController extends Controller
         $attributes['publish'] = isset($_POST['publish']);
         $attributes['picture'] = request()->file('picture')->store('public/thumbnails');
 
-        $ing = explode("\n", $_POST['ingredients']);
-        foreach ($ing as $item) {
-            echo "Receita 1";
-            echo "<pre>";
-            print_r(explode(" ", $item));
-            echo "</pre>";
-        }
-
-
-
-
+        $ingredients = explode("\n", $_POST['ingredients']);
 
         $recipe = Recipe::create($attributes);
+
+        $ingredientList =$this->storeIngredients($ingredients);
+
+        $recipe->ingredients()->attach($ingredientList);
 
         return view('recipes.edit',
             [
@@ -131,6 +126,32 @@ class RecipesController extends Controller
     public function about()
     {
         return view('aboutUs');
+    }
+
+    private function storeIngredients(array $ingredients)
+    {
+        $ingredientList = array();
+        foreach ($ingredients as $ingredient) {
+            $ing = explode(" ", $ingredient);
+            if (sizeof($ing) > 2) {
+                $unit = $ing[1];
+                $name = $this->getIngredientName($ing);
+                $amount = $ing[0];
+                $newIngredient = array('name' => $name, 'unit' => $unit, 'amount' => $amount);
+                $id = Ingredients::create($newIngredient)->id;
+                array_push($ingredientList, $id);
+            }
+        }
+        return $ingredientList;
+    }
+
+    private function getIngredientName(array $ing)
+    {
+        $name = "";
+        for ($i = 2; $i < sizeof($ing); $i++) {
+            $name = $name . " " . $ing[$i];
+        }
+        return $name;
     }
 
 

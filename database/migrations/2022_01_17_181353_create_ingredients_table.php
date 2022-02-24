@@ -17,6 +17,7 @@ class CreateIngredientsTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("unit");
+            $table->integer("amount");
             $table->timestamps();
         });
     }

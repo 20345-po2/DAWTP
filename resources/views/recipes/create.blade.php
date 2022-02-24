@@ -30,7 +30,7 @@
                             <x-form.error name="category_id"/>
                         </x-form.field>
                         <x-form.textarea name="ingredients" title="Ingredientes"
-                                         placeholder="Ex.: 3 ovos"/>
+                                         placeholder="Ex.: 3 unid. ovos "/>
                         <x-form.textarea name="instructions" title="Modo de preparo"
                                          placeholder="Ex.: misture todos os ingredientes"/>
                         <x-form.field>

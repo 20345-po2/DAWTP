@@ -21,15 +21,6 @@ class Recipe extends Model
         return 'id';
     }
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function scopeFilter($query, array $filters)
     {
@@ -45,6 +36,21 @@ class Recipe extends Model
     {
         $this->attributes['name'] = $name;
         $this->attributes['slug'] = Str::slug($name . '-' . auth()->id());
+    }
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredients::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 
