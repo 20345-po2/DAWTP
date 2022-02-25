@@ -47,8 +47,22 @@
                             </select>
                             <x-form.error name="category_id"/>
                         </x-form.field>
+                        <ul>
+                            <li>
+
+                            </li>
+                        </ul>
+
                         <x-form.textarea name="ingredients" title="Ingredientes"
-                                         placeholder="Ex.: 3 ovos">{{old('ingredients')}}</x-form.textarea>
+                                         placeholder="Ex.: 3 ovos">
+                            @foreach($recipe->ingredients as $ingredient)
+                                {{ $ing = $ing . $ingredient->amount . " " . $ingredient->unit . " " . $ingredient->name  }}
+                            @endforeach
+                            {{old('ingredients', $ing)}}
+
+
+                        </x-form.textarea>
+
                         <x-form.textarea name="instructions" title="Modo de preparo"
                                          placeholder="Ex.: misture todos os ingredientes">{{old('instructions', $recipe->instructions)}}</x-form.textarea>
                         <x-form.field>

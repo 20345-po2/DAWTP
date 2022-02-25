@@ -29,8 +29,9 @@
 <div class="card text-dark bg-light mb-3" style=" margin-left: 13.5%; margin-right: 13.5%; max-width: 50%">
     <div class="card-header text-center">Ingredientes</div>
     <div class="card-body">
-        {{--        <h5 class="card-title">Light card title</h5>--}}
-        <p class="card-text">Ovos<br>2 colheres de açúcar<br>1 colher de canela</p>
+        @foreach($recipe->ingredients as $ingredient)
+            <p class="card-text">{{$ingredient->amount . " " . $ingredient->unit . " " . $ingredient->name  }}<br></p>
+        @endforeach
     </div>
 </div>
 
