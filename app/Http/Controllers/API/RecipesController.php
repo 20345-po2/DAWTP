@@ -16,6 +16,8 @@ class RecipesController extends BaseController
     }
 
 
+
+
     public function store(Request $request)
     {
         $attributes = request()->validate([

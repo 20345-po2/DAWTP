@@ -52,17 +52,13 @@
 
                             </li>
                         </ul>
-
-                        <x-form.textarea name="ingredients" title="Ingredientes"
-                                         placeholder="Ex.: 3 ovos">
-                            @foreach($recipe->ingredients as $ingredient)
-                                {{ $ing = $ing . $ingredient->amount . " " . $ingredient->unit . " " . $ingredient->name  }}
-                            @endforeach
-                            {{old('ingredients', $ing)}}
-
-
-                        </x-form.textarea>
-
+                        @foreach($recipe->ingredients as $ingredient)
+                        <div class="col">
+                            <x-form.input name="ingredients . $ingredient->id" title="Ingredientes"
+                                          placeholder="" type="text"
+                                          :value="old('ingredients', $ingredient->amount . '' . $ingredient->unit . ' ' . $ingredient->name)"/>
+                        </div>
+                        @endforeach
                         <x-form.textarea name="instructions" title="Modo de preparo"
                                          placeholder="Ex.: misture todos os ingredientes">{{old('instructions', $recipe->instructions)}}</x-form.textarea>
                         <x-form.field>

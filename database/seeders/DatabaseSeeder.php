@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'alimentacao-saudavel'
         ]);
 
-        Recipe::create([
+        /*Recipe::create([
             'user_id' => $user->id,
             'category_id' => $massas->id,
             'name' => 'Pizza de frigideira com atum',
@@ -163,6 +163,6 @@ class DatabaseSeeder extends Seeder
             'time' => 30,
             'instructions' => 'Em uma frigideira antiaderente, coloque a massa de pizza, cubra com o molho de tomate, espalhe o atum e o queijo. Tempere com sal, pimenta e orégano. Tampe e leve ao fogo baixo por 3 minutos. Retire do fogo, espalhe a rúcula, regue com azeite e sirva em seguida.',
         ]);
-
+*/
     }
 }
